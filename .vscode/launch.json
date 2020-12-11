@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug rust-app",
-            "program": "${workspaceFolder}/rust-app/target/debug/rust-app",
+            "program": "${workspaceFolder}/target/debug/rust-app",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
