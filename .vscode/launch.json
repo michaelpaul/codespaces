@@ -10,7 +10,8 @@
             "name": "Debug rust-app",
             "program": "${workspaceFolder}/target/debug/rust-app",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "${defaultBuildTask}"
         }
     ]
 }
