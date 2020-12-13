@@ -37,8 +37,6 @@
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
-	// @TODO Build steps via tasks
-	// "postCreateCommand": "cd demo && php bin/console doctrine:schema:update --force -n && php bin/console doctrine:fixtures:load -n && symfony serve"
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }

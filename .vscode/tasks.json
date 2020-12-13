@@ -53,6 +53,25 @@
                 "cwd": "${workspaceFolder}/demo"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "server: start",
+            "type": "shell",
+            "command": "symfony serve",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "db: migrate",
+            "type": "shell",
+            "command": "php bin/console doctrine:schema:update --force -n && php bin/console doctrine:fixtures:load -n",
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
         }
     ]
 }
