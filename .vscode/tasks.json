@@ -1,0 +1,58 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "server: install",
+            "type": "shell",
+            "command": "composer install",
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "client: install",
+            "type": "shell",
+            "command": "yarn install",
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Install dependencies",
+            "dependsOn": [
+                "client: install",
+                "server: install"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "client: watch",
+            "group": "build",
+            "command": "yarn",
+            "args": [
+                "encore",
+                "dev",
+                "--watch"
+            ],
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "server: test",
+            "type": "shell",
+            "command": "./bin/phpunit",
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/demo"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -37,5 +37,3 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 RUN symfony server:ca:install
 
-# @TODO Build app
-# RUN cd demo && composer install && yarn install && yarn encore dev
