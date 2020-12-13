@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/php:0-${VARIANT}
 
 # Install MariaDB client
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client \ 
+    && apt-get install -y mariadb-client \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Update args in docker-compose.yaml to set the UID/GID of the "vscode" user.
@@ -37,5 +37,5 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 RUN symfony server:ca:install
 
-# Build app
-RUN cd demo && composer install && yarn install && yarn encore dev 
+# @TODO Build app
+# RUN cd demo && composer install && yarn install && yarn encore dev
