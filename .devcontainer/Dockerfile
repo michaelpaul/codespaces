@@ -29,3 +29,13 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "source /usr/local/shar
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
+# PHP extensions
+RUN docker-php-ext-install pdo_mysql
+
+# Install "symfony"
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN symfony server:ca:install
+
+# Build app
+RUN cd demo && composer install && yarn install && yarn encore dev 
