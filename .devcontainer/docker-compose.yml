@@ -16,6 +16,7 @@ services:
         USER_GID: 1000
 
     volumes:
+      # Not really used when I clone from repo but necessary to fill "workspaceFolder" in devcontainer.json
       - app-code:/workspace
 
     # Overrides default command so things don't shut down after the process ends.
