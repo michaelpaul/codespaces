@@ -1,6 +1,6 @@
 version: '3'
 
-services: 
+services:
   app:
     build:
       context: .
@@ -16,7 +16,7 @@ services:
         USER_GID: 1000
 
     volumes:
-      - ..:/workspace:cached
+      - app-code:/workspace
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -27,7 +27,7 @@ services:
     # Uncomment the next line to use a non-root user for all processes.
     # user: vscode
 
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   db:
@@ -43,6 +43,7 @@ services:
 
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-  
+
 volumes:
+  app-code:
   mariadb-data:
